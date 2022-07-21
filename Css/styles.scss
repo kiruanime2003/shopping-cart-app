@@ -1,0 +1,416 @@
+$white: #FFF;
+$candyPink: #F56668;
+$tartOrange: #FF3E41;
+$jet: #363537;
+$cultured: #e5e5e5;
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+input{
+    outline: none;
+}
+
+nav {
+    width: 100%;
+    height: 55px;
+    background-color: $white;
+    border-bottom: 2px $jet solid;
+
+    #nav-div {
+        display: flex;
+        flex-direction: row;
+        width: 75%;
+        justify-content: space-between;
+        height: 100%;
+        margin: auto;
+
+        div {
+            align-self: center;
+
+            svg {
+                height: 35px;
+                width: 35px;
+            }
+        }
+
+        #menu {
+
+            .bar {
+                display: block;
+                background-color: $jet;
+                width: 25px;
+                height: 3.3px;
+                margin: 5px auto;
+
+            }
+        }
+
+        #menu:hover {
+            cursor: pointer;
+        }
+
+        ul {
+            align-self: center;
+
+            li {
+                list-style-type: none;
+                margin-left: 20px;
+                font-size: 17px;
+                display: inline;
+
+                a {
+                    color: $jet;
+                    font-weight: 700;
+                }
+
+                a:hover{
+                    color: $tartOrange;
+                }
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@mixin product-image-style {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+button {
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 1px;
+    background-color: $tartOrange;
+    border: none;
+    border-radius: 6px;
+    color: $white;
+
+    a {
+        color: $white;
+    }
+}
+
+button:hover {
+    background-color: $candyPink;
+    cursor: pointer;
+}
+
+section{
+    width: 100vw;
+}
+
+#home {
+    background-image: url(../Images/home-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-weight: 700;
+        letter-spacing: -0.4px;
+        color: $jet;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+#products-grid {
+    padding: 50px 0;
+    background-color: $white;
+    height: fit-content;
+
+    h2,
+    #intro{
+        margin: auto;
+        max-width: 750px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: 700;
+        color: $tartOrange;
+        font-size: 24px;
+    }
+
+    #intro {
+        font-weight: 400;
+        word-wrap: break-word;
+        width: 500px;
+        text-align: center;
+        padding: 6px 0 0 0;
+        line-height: 1.7;
+        color: $jet;
+        letter-spacing: 0.1px;
+    }
+
+    #cart-btn{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: auto;
+        max-width: 770px;
+    }
+
+    #products-grid1 {
+        padding: 50px 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-column-gap: 10px;
+        grid-row-gap: 35px;
+        margin: auto;
+        max-width: 830px;
+
+        #pizza {
+            background-image: url(../Images/pizza.jpg);
+            @include product-image-style();
+        }
+
+        #burger{
+            background-image: url(../Images/burger.jpg);
+            @include product-image-style();
+        }
+
+        #french-fries{
+            background-image: url(../Images/french-fries.jpg);
+            @include product-image-style();
+        }
+
+        #hot-dog{
+            background-image: url(../Images/hotdog.jpg);
+            @include product-image-style();
+        }
+
+        #donut{
+            background: url(../Images/donut.jpg);
+            @include product-image-style();
+        }
+
+        #shawarma{
+            background: url(../Images/shawarma.jpg);
+            @include product-image-style();
+        }
+
+        .each-product:hover{
+            box-shadow: 0px 10px 20px 5px #cdcdcd;
+            cursor: pointer;
+        }
+
+        .each-product {
+            display: flex;
+            flex-direction: row;
+            width: 240px;
+            height: 240px;
+            border-radius: 10px;
+
+            .cost-name {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                height: fit-content;
+                top: 179px;
+                width: 53%;
+                background-color: $cultured;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+                padding: 5.5px 9px;
+                margin: 0 0 0 10px;
+
+                h3{
+                    font-size: 17px;
+                    font-weight: 700;
+                    color: $tartOrange;
+                    letter-spacing: 0.2px;
+                }
+
+                p{
+                    color: $jet;
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+
+            .item-number {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+                height: fit-content;
+                top: 179px;
+                background-color: $cultured;
+                padding: 14px 4px;
+                width: fit-content;
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+
+                svg{
+                    margin: 0 4.5px;
+                }
+
+                svg:hover{
+                    cursor: pointer;
+                }
+
+                p{
+                    font-weight: 700;
+                    color: $jet;
+                    font-size: 19px;
+                    color: $tartOrange;
+                }
+            }
+        }
+    }
+}
+
+#contact{
+    background-color: $cultured;
+    padding: 30px 0 18px 0;
+    height: fit-content;
+
+    h3, footer{
+        text-align: center;
+    }
+
+    h3{
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 0.4px;
+        color: $jet;
+        margin-bottom: 35px;
+    }
+
+    form{
+        margin: auto;
+        max-width: fit-content;
+
+        input{
+            padding: 10px 8px;
+            width: 270px;
+            margin-right: 20px;
+            border: 2px $tartOrange solid;
+            border-radius: 4px;
+            background-color: $white;
+            letter-spacing: 0.7px;
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+
+    footer{
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
+#cart-page{
+
+    padding: 30px 0;
+
+    h4{
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: $tartOrange;
+        letter-spacing: 0.1px;
+        margin-bottom: 30px;
+    }
+
+    #cart-display-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin: auto;
+        max-width: 830px;
+        
+        .cart-cols{
+
+            h5{
+                font-weight: 500;
+                font-size: 20px;
+                color: $jet;
+            }
+        }
+    }
+
+    p{
+        font-weight: 700;
+        font-size: 25px;
+        color: $jet;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    ul {
+        position: fixed;
+        left: -100%;
+        top: 3rem;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+
+        li {
+            margin: 10px 0;
+        }
+    }
+
+    ul.active {
+        left: 0;
+        border-bottom: 2px $jet solid;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    #menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu.active .bar:nth-child(1) {
+        transition: 0.15s ease-in;
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #menu.active .bar:nth-child(3) {
+        transition: 0.15s ease-in;
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}

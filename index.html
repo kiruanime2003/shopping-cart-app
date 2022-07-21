@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+
+<body>
+
+    <div id="home-page">
+        <nav>
+            <div id="nav-div">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#363537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-box">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                </div>
+                <ul>
+                    <li><a href="#home" target="_self">Home</a></li>
+                    <li><a href="#products-grid" target="_self">Our Products</a></li>
+                    <li><a href="#contact" target="_self">Contact</a></li>
+                </ul>
+                <div id="menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <section id="home">
+            <h1>It's Good Mood Food❤️</h1>
+            <button type="button" class="button-styles">
+                <a href="#products-grid" target="_self">Shop now</a>
+            </button>
+
+        </section>
+
+        <section id="products-grid">
+            <h2>Our Products</h2>
+            <p id="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua.</p>
+
+            <div id="products-grid1">
+                <div class="each-product" id="pizza">
+                    <div class="cost-name">
+                        <h3>Pizza</h3>
+                        <!--1-->
+                        <p>$35</p>
+                    </div>
+                    <div class="item-number">
+                        <svg class="item1" id="minus1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p class="quantity">0</p>
+                        <svg class="item1" id="plus1" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="each-product" id="burger">
+                    <div class="cost-name">
+                        <h3>Burger</h3>
+                        <!--2-->
+                        <p>$10</p>
+                    </div>
+                    <div class="item-number">
+                        <svg class="item2" id="minus2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p class="quantity">0</p>
+                        <svg class="item2" id="plus2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="each-product" id="french-fries">
+                    <div class="cost-name">
+                        <h3>French fries</h3>
+                        <!--3-->
+                        <p>$40</p>
+                    </div>
+                    <div class="item-number">
+
+                        <svg class="item3" id="minus3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p class="quantity">0</p>
+                        <svg class="item3" id="plus3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="each-product" id="hot-dog">
+                    <div class="cost-name">
+                        <h3>Hot dogs</h3>
+                        <!--4-->
+                        <p>$28</p>
+                    </div>
+                    <div class="item-number">
+
+                        <svg class="item4" id="minus4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p class="quantity">0</p>
+                        <svg class="item4" id="plus4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="each-product" id="donut">
+
+                    <div class="cost-name">
+                        <h3>Doughnut</h3>
+                        <!--5-->
+                        <p>$78</p>
+                    </div>
+                    <div class="item-number">
+
+                        <svg class="item5" id="minus5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p class="quantity">0</p>
+                        <svg class="item5" id="plus5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="each-product" id="shawarma">
+                    <div class="cost-name">
+                        <h3>Shawarma</h3>
+                        <!--6-->
+                        <p>$90</p>
+                    </div>
+                    <div class="item-number">
+
+                        <svg class="item6" id="minus6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <p class="quantity">0</p>
+                        <svg class="item6" id="plus6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-square">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="cart-btn">
+                <button type="button" class="button-styles">Cart (<span id="view-cart-quantity">0</span>) </button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Subscribe❤️</h3>
+            <form action="#">
+                <input placeholder="Enter your email" type="email">
+                <button type="button" class="button-styles">Sign up</button>
+            </form>
+            <footer>Images source: @DuckDuckGo</footer>
+        </section>
+    </div>
+
+    <section id="cart-page" hidden>
+        <h4>Your cart</h4>
+        <div id="cart-display-grid">
+            <div class="cart-cols">
+                <h5>Item name</h5>
+                <div id="item-name-col"></div>
+            </div>
+            <div class="cart-cols">
+                <h5>Quantity</h5>
+                <div id="quantity-col"></div>
+            </div>
+            <div class="cart-cols">
+                <h5>Cost</h5>
+                <div id="cost-col"></div>
+            </div>
+        </div>
+
+        <p>Total cost <span></span></p>
+        <button type="button" class="button-styles" id="go-back">Go back</button>
+    </section>
+
+
+    <script src="./Js/main-min.js" charset="UTF-8"></script>
+</body>
+
+</html>
