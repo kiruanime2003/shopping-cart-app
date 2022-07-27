@@ -388,6 +388,7 @@ section{
         display: flex;
         flex-direction: column;
         background-color: $white;
+        transition: 0.15s ease-in;
 
         li {
             margin: 10px 0;
@@ -397,6 +398,7 @@ section{
     ul.active {
         left: 0;
         border-bottom: 2px $jet solid;
+        transition: 0.15s ease-in;
     }
 
     #menu {

@@ -345,6 +345,7 @@ section {
     display: flex;
     flex-direction: column;
     background-color: #FFF;
+    transition: 0.15s ease-in;
   }
   ul li {
     margin: 10px 0;
@@ -352,6 +353,7 @@ section {
   ul.active {
     left: 0;
     border-bottom: 2px #363537 solid;
+    transition: 0.15s ease-in;
   }
   #menu {
     display: block;
