@@ -11,6 +11,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var quantityDisplay = Array.from(document.getElementsByClassName("quantity"));
 
+    var itemNameColumn = document.getElementById("item-name-col");
+    var quantityColumn = document.getElementById("quantity-col");
+    var costColumn = document.getElementById("cost-col");
+
+    var pObject = {
+        itemProperty: 0,
+        quantityProperty: 0,
+        costProperty: 0
+    };
+
+    var pPizza = Object.create(pObject);
+    var pBurger = Object.create(pObject);
+    var pFries = Object.create(pObject);
+    var pHotDogs = Object.create(pObject);
+    var pDoughNut = Object.create(pObject);
+    var pShawarma = Object.create(pObject);
+
     pizzaSvgIcons.forEach(item => item.addEventListener("click", function (event) {
         if (event.target.id == "plus1") pizzaQuantity++;
 
@@ -23,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[0].innerHTML = pizzaQuantity;
         calculateFinaLQuantity();
+        displayPizzaDetails();
     }));
 
     burgerSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -37,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[1].innerHTML = burgerQuantity;
         calculateFinaLQuantity();
+        displayBurgerDetails();
     }));
 
     friesSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -51,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[2].innerHTML = friesQuantity;
         calculateFinaLQuantity();
+        displayFriesDetails();
     }));
 
     hotDogsSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -65,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[3].innerHTML = hotDogsQuantity;
         calculateFinaLQuantity();
+        displayHotdogsDetails();
     }));
 
     doughnutSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -79,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[4].innerHTML = doughnutQuantity;
         calculateFinaLQuantity();
+        displayCartDetails();
     }));
 
     shawarmaSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -93,18 +115,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[5].innerHTML = shawarmaQuantity;
         calculateFinaLQuantity();
+        displayCartDetails();
     }));
 
     function calculateFinaLQuantity() {
         finalQuantity = pizzaQuantity + burgerQuantity + shawarmaQuantity + doughnutQuantity + hotDogsQuantity + friesQuantity;
         document.getElementById("view-cart-quantity").innerHTML = finalQuantity;
+
     }
 
     document.getElementById("cart-btn1").addEventListener("click", function () {
         document.getElementById("cart-page").hidden = false;
         document.getElementById("home-page").hidden = true;
 
-        displayCartDetails();
     });
 
     document.getElementById("go-back").addEventListener("click", function () {
@@ -112,24 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("home-page").hidden = false;
     });
 
-    function displayCartDetails() {
-
-        var itemNameColumn = document.getElementById("item-name-col");
-        var quantityColumn = document.getElementById("quantity-col");
-        var costColumn = document.getElementById("cost-col");
-
-        var pObject = {
-            itemProperty: 0,
-            quantityProperty: 0,
-            costProperty: 0
-        };
-
-        var pPizza = Object.create(pObject);
-        var pBurger = Object.create(pObject);
-        var pFries = Object.create(pObject);
-        var pHotDogs = Object.create(pObject);
-        var pDoughNut = Object.create(pObject);
-        var pShawarma = Object.create(pObject);
+    function displayPizzaDetails() {
 
         if (pizzaQuantity >= 0) {
 
@@ -140,12 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     (document.getElementsByClassName("first-col")[0]).remove();
                     (document.getElementsByClassName("second-col")[0]).remove();
                     (document.getElementsByClassName("third-col")[0]).remove();
-                    
+
                 }
             }
 
             else {
-                
+
                 if (!(document.getElementsByClassName("pizza-row")[0] || document.getElementsByClassName("pizza-row")[1] || document.getElementsByClassName("pizza-row")[2])) {
 
                     //creates a new object from a existing object
@@ -176,23 +182,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         }
+    }
 
-        //burger calculation
+    function displayBurgerDetails() {
+
         if (burgerQuantity >= 0) {
 
             if (burgerQuantity === 0) {
 
-                if ((pizzaQuantity == 0) || (friesQuantity==0) || (hotDogsQuantity==0) || (doughnutQuantity==0) || (shawarmaQuantity==0) || (friesQuantity>0) || (hotDogsQuantity>0) || (doughnutQuantity>0) || (shawarmaQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0) || (friesQuantity>0 && doughnutQuantity>0) || (friesQuantity>0 && shawarmaQuantity>0) || (hotDogsQuantity>0 && doughnutQuantity>0) || (hotDogsQuantity>0 && shawarmaQuantity>0) || (doughnutQuantity>0 && shawarmaQuantity>0) || (hotDogsQuantity>0 &&doughnutQuantity>0 && shawarmaQuantity>0) || (friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
-
-                    if (document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2]) {
-
-                        (document.getElementsByClassName("first-col")[0]).remove();
-                        (document.getElementsByClassName("second-col")[0]).remove();
-                        (document.getElementsByClassName("third-col")[0]).remove();
-                    }
-                }
-
-                else if ((pizzaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0) || ( pizzaQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)){
+                if ((pizzaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2]) {
 
@@ -201,12 +199,22 @@ document.addEventListener("DOMContentLoaded", function () {
                         (document.getElementsByClassName("third-col")[1]).remove();
                     }
                 }
+
+                else if ((pizzaQuantity == 0) || (friesQuantity == 0) || (hotDogsQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0) || (friesQuantity > 0) || (hotDogsQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0) || (hotDogsQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0 && shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
+
+                    if (document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2]) {
+
+                        (document.getElementsByClassName("first-col")[0]).remove();
+                        (document.getElementsByClassName("second-col")[0]).remove();
+                        (document.getElementsByClassName("third-col")[0]).remove();
+                    }
+                }
             }
 
             else {
 
                 //index one burger
-                if((pizzaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0) || ( pizzaQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)){
+                if ((pizzaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2]) {
 
@@ -217,7 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     else if (!(document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2])) {
 
-                        console.log(burgerQuantity);
                         pBurger.itemProperty = document.createElement("p");
                         pBurger.itemProperty.innerHTML = "Burger";
                         itemNameColumn.appendChild(pBurger.itemProperty);
@@ -239,11 +246,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 //index zero burger
-                else if ((pizzaQuantity == 0) || (friesQuantity==0) || (hotDogsQuantity==0) || (doughnutQuantity==0) || (shawarmaQuantity==0) || (friesQuantity>0) || (hotDogsQuantity>0) || (doughnutQuantity>0) || (shawarmaQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0) || (friesQuantity>0 && doughnutQuantity>0) || (friesQuantity>0 && shawarmaQuantity>0) || (hotDogsQuantity>0 && doughnutQuantity>0) || (hotDogsQuantity>0 && shawarmaQuantity>0) || (doughnutQuantity>0 && shawarmaQuantity>0) || (hotDogsQuantity>0 &&doughnutQuantity>0 && shawarmaQuantity>0) || (friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (friesQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity == 0) || (friesQuantity == 0) || (hotDogsQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0) || (friesQuantity > 0) || (hotDogsQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0) || (hotDogsQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0 && shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2])) {
 
-                        console.log(burgerQuantity);
                         pBurger.itemProperty = document.createElement("p");
                         pBurger.itemProperty.innerHTML = "Burger";
                         itemNameColumn.appendChild(pBurger.itemProperty);
@@ -273,23 +279,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         }
+    }
+
+    function displayFriesDetails(){
 
         if (friesQuantity >= 0) {
 
             if (friesQuantity === 0) {
 
-                if ((pizzaQuantity>0 && burgerQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0 &&shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
-                    
+                if ((pizzaQuantity > 0 && burgerQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
+
                     if (document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2]) {
 
-                       
+
                         (document.getElementsByClassName("first-col")[2]).remove();
                         (document.getElementsByClassName("second-col")[2]).remove();
                         (document.getElementsByClassName("third-col")[2]).remove();
                     }
                 }
 
-                else if ((pizzaQuantity>0) || (burgerQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && hotDogsQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0) || (burgerQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (burgerQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity > 0) || (burgerQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && hotDogsQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2]) {
                         (document.getElementsByClassName("first-col")[1]).remove();
@@ -298,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if((pizzaQuantity==0) || (burgerQuantity==0) || (hotDogsQuantity==0) || (doughnutQuantity==0) || (shawarmaQuantity==0) || (hotDogsQuantity>0) || (doughnutQuantity>0) || (shawarmaQuantity>0) || (hotDogsQuantity>0 && doughnutQuantity>0) || (hotDogsQuantity>0 && shawarmaQuantity>0) || (doughnutQuantity>0 && shawarmaQuantity>0) || (hotDogsQuantity>0 &&  doughnutQuantity>0 && shawarmaQuantity>0)){
+                else if ((pizzaQuantity == 0) || (burgerQuantity == 0) || (hotDogsQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0) || (hotDogsQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0) || (hotDogsQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0 && shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2]) {
                         (document.getElementsByClassName("first-col")[0]).remove();
@@ -310,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             else {
 
-                if ((pizzaQuantity>0 && burgerQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0 &&shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                if ((pizzaQuantity > 0 && burgerQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     //index 2 fries
                     if (!(document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2])) {
@@ -340,11 +349,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 //index 1 fries
-                else if ((pizzaQuantity>0) || (burgerQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && hotDogsQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0) || (burgerQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0 && hotDogsQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0) || (burgerQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && hotDogsQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity > 0) || (burgerQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && hotDogsQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0 && hotDogsQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2])) {
 
-                        console.log(friesQuantity);
                         pFries.itemProperty = document.createElement("p");
                         pFries.itemProperty.innerHTML = "French fries";
                         itemNameColumn.appendChild(pFries.itemProperty);
@@ -372,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 //index 0 fries
-                else if((pizzaQuantity==0) || (burgerQuantity==0) || (hotDogsQuantity==0) || (doughnutQuantity==0) || (shawarmaQuantity==0) || (hotDogsQuantity>0) || (doughnutQuantity>0) || (shawarmaQuantity>0) || (hotDogsQuantity>0 && doughnutQuantity>0) || (hotDogsQuantity>0 && shawarmaQuantity>0) || (doughnutQuantity>0 && shawarmaQuantity>0) || (hotDogsQuantity>0 &&  doughnutQuantity>0 && shawarmaQuantity>0)){
+                else if ((pizzaQuantity == 0) || (burgerQuantity == 0) || (hotDogsQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0) || (hotDogsQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0) || (hotDogsQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0 && shawarmaQuantity > 0) || (hotDogsQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2])) {
 
@@ -404,13 +412,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         }
+    }
 
-        //hotDogsQuantity calculation
+    function displayHotdogsDetails(){
+
         if (hotDogsQuantity >= 0) {
 
             if (hotDogsQuantity === 0) {
 
-                if ((pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                if ((pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2]) {
                         (document.getElementsByClassName("first-col")[3]).remove();
@@ -419,7 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((pizzaQuantity > 0 && burgerQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0) ||  (burgerQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0) || (burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity > 0 && burgerQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2]) {
                         (document.getElementsByClassName("first-col")[2]).remove();
@@ -428,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((pizzaQuantity > 0) || (burgerQuantity > 0) || (friesQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && shawarmaQuantity) || (friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity > 0) || (burgerQuantity > 0) || (friesQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && shawarmaQuantity) || (friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2]) {
                         (document.getElementsByClassName("first-col")[1]).remove();
@@ -437,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((pizzaQuantity==0) || (burgerQuantity==0) || (friesQuantity==0) || (doughnutQuantity==0) || (shawarmaQuantity==0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (doughnutQuantity>0 && shawarmaQuantity>0)){
+                else if ((pizzaQuantity == 0) || (burgerQuantity == 0) || (friesQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2]) {
                         (document.getElementsByClassName("first-col")[0]).remove();
@@ -447,10 +457,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            
+
             else {
 
-                if ((pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                if ((pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2])) {
 
@@ -481,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((pizzaQuantity > 0 && burgerQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0) ||  (burgerQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0) || (burgerQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && burgerQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity > 0 && burgerQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2])) {
 
@@ -512,7 +522,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((pizzaQuantity > 0) || (burgerQuantity > 0) || (friesQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && shawarmaQuantity) || (friesQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (burgerQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0) || (pizzaQuantity>0 && doughnutQuantity>0 && shawarmaQuantity>0)) {
+                else if ((pizzaQuantity > 0) || (burgerQuantity > 0) || (friesQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0) || (pizzaQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0) || (burgerQuantity > 0 && shawarmaQuantity > 0) || (friesQuantity > 0 && doughnutQuantity > 0) || (friesQuantity > 0 && shawarmaQuantity) || (friesQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (burgerQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0) || (pizzaQuantity > 0 && doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2])) {
 
@@ -543,7 +553,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if((pizzaQuantity==0) || (burgerQuantity==0) || (friesQuantity==0) || (doughnutQuantity==0) || (shawarmaQuantity==0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (doughnutQuantity>0 && shawarmaQuantity>0)){
+                else if ((pizzaQuantity == 0) || (burgerQuantity == 0) || (friesQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (doughnutQuantity > 0 && shawarmaQuantity > 0)) {
 
                     if (!(document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2])) {
 
@@ -575,6 +585,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+    }
+
+    function displayCartDetails() {
+
+        
 
         if (doughnutQuantity >= 0) {
 
