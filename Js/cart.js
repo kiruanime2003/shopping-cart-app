@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[4].innerHTML = doughnutQuantity;
         calculateFinaLQuantity();
-        displayCartDetails();
+        displayDoughnutDetails();
     }));
 
     shawarmaSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -121,13 +121,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function calculateFinaLQuantity() {
         finalQuantity = pizzaQuantity + burgerQuantity + shawarmaQuantity + doughnutQuantity + hotDogsQuantity + friesQuantity;
         document.getElementById("view-cart-quantity").innerHTML = finalQuantity;
-
     }
 
     document.getElementById("cart-btn1").addEventListener("click", function () {
         document.getElementById("cart-page").hidden = false;
         document.getElementById("home-page").hidden = true;
-
     });
 
     document.getElementById("go-back").addEventListener("click", function () {
