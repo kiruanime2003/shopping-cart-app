@@ -587,9 +587,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function displayCartDetails() {
-
-        
+    function displayDoughnutDetails(){
 
         if (doughnutQuantity >= 0) {
 
@@ -802,6 +800,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
+    }
+
+    function displayCartDetails() {
+
+        
+
+        
 
         if (shawarmaQuantity >= 0) {
 
