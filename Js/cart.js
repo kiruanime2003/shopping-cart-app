@@ -802,10 +802,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayCartDetails() {
 
-        
-
-        
-
         if (shawarmaQuantity >= 0) {
 
             if (shawarmaQuantity === 0) {
@@ -876,6 +872,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
+                        //index 5 shawarma
                         pShawarma.itemProperty = document.createElement("p");
                         pShawarma.itemProperty.innerHTML = "Shawarma";
                         itemNameColumn.appendChild(pShawarma.itemProperty);
@@ -906,6 +903,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
+                        //index 1 shawarma
                         pShawarma.itemProperty = document.createElement("p");
                         pShawarma.itemProperty.innerHTML = "Shawarma";
                         itemNameColumn.appendChild(pShawarma.itemProperty);
@@ -936,6 +934,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
+                        //index 2 shawarma
                         pShawarma.itemProperty = document.createElement("p");
                         pShawarma.itemProperty.innerHTML = "Shawarma";
                         itemNameColumn.appendChild(pShawarma.itemProperty);
@@ -966,6 +965,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
+                        //index 3 shawarma
                         pShawarma.itemProperty = document.createElement("p");
                         pShawarma.itemProperty.innerHTML = "Shawarma";
                         itemNameColumn.appendChild(pShawarma.itemProperty);
@@ -996,6 +996,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
+                        //index 4 shawarma
                         pShawarma.itemProperty = document.createElement("p");
                         pShawarma.itemProperty.innerHTML = "Shawarma";
                         itemNameColumn.appendChild(pShawarma.itemProperty);
@@ -1026,6 +1027,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
+                        //index 0 shawarma
                         pShawarma.itemProperty = document.createElement("p");
                         pShawarma.itemProperty.innerHTML = "Shawarma";
                         itemNameColumn.appendChild(pShawarma.itemProperty);
