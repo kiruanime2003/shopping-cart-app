@@ -855,7 +855,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if(pizzaQuantity==0 || burgerQuantity==0 || friesQuantity==0 || hotDogsQuantity==0 || doughnutQuantity==0)
+                else
                 {
                     if (document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2]) {
 
@@ -1023,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if(pizzaQuantity==0 || burgerQuantity==0 || friesQuantity==0 || hotDogsQuantity==0 || doughnutQuantity==0){
+                else{
 
                     if (!(document.getElementsByClassName("shawarma-row")[0] || document.getElementsByClassName("shawarma-row")[1] || document.getElementsByClassName("shawarma-row")[2])) {
 
