@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[0].innerHTML = pizzaQuantity;
         calculateFinaLQuantity();
-        displayPizzaDetails();
+        displayCartDetails();
     }));
 
     burgerSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[1].innerHTML = burgerQuantity;
         calculateFinaLQuantity();
-        displayBurgerDetails();
+        displayCartDetails();
     }));
 
     friesSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[2].innerHTML = friesQuantity;
         calculateFinaLQuantity();
-        displayFriesDetails();
+        displayCartDetails();
     }));
 
     hotDogsSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[3].innerHTML = hotDogsQuantity;
         calculateFinaLQuantity();
-        displayHotdogsDetails();
+        displayCartDetails();
     }));
 
     doughnutSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[4].innerHTML = doughnutQuantity;
         calculateFinaLQuantity();
-        displayDoughnutDetails();
+        displayCartDetails();
     }));
 
     shawarmaSvgIcons.forEach(item => item.addEventListener("click", function (event) {
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         quantityDisplay[5].innerHTML = shawarmaQuantity;
         calculateFinaLQuantity();
-        displayShawarmaDetails();
+        displayCartDetails();
     }));
 
     function calculateFinaLQuantity() {
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("home-page").hidden = false;
     });
 
-    function displayPizzaDetails() {
+    function displayCartDetails() {
 
         if (pizzaQuantity >= 0) {
 
@@ -180,9 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         }
-    }
-
-    function displayBurgerDetails() {
 
         if (burgerQuantity >= 0) {
 
@@ -192,6 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (document.getElementsByClassName("burger-row")[0] || document.getElementsByClassName("burger-row")[1] || document.getElementsByClassName("burger-row")[2]) {
 
+                        console.log(document.getElementsByClassName("first-col")[1]);
                         (document.getElementsByClassName("first-col")[1]).remove();
                         (document.getElementsByClassName("second-col")[1]).remove();
                         (document.getElementsByClassName("third-col")[1]).remove();
@@ -276,9 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         }
-    }
-
-    function displayFriesDetails(){
 
         if (friesQuantity >= 0) {
 
@@ -409,9 +404,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         }
-    }
-
-    function displayHotdogsDetails(){
 
         if (hotDogsQuantity >= 0) {
 
@@ -582,9 +574,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-    }
-
-    function displayDoughnutDetails(){
 
         if (doughnutQuantity >= 0) {
 
@@ -797,9 +786,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
         }
-    }
-
-    function displayShawarmaDetails() {
 
         if (shawarmaQuantity >= 0) {
 
