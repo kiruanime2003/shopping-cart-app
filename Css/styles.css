@@ -413,6 +413,7 @@ section {
   #products-grid #products-grid1 .each-product .cost-name {
     top: 149px;
     width: 52%;
+    left: -5px;
   }
   #products-grid #products-grid1 .each-product .cost-name h3 {
     font-size: 15.5px;
@@ -422,6 +423,7 @@ section {
   }
   #products-grid #products-grid1 .each-product .item-number {
     top: 149px;
+    left: -5px;
     padding: 12.6px 2px;
   }
   #products-grid #products-grid1 .each-product .item-number p {
@@ -453,5 +455,61 @@ section {
   }
   #cart-page #cart-display-grid .cart-cols p {
     font-size: 17px;
+  }
+}
+@media screen and (max-width: 680px) {
+  #home h1 {
+    font-size: 25px;
+  }
+  #products-grid #intro {
+    width: 80vw;
+    letter-spacing: 0.3px;
+  }
+  #products-grid #cart-btn {
+    width: 95vw;
+  }
+  #products-grid #products-grid1 {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    max-width: 550px;
+  }
+  #products-grid #products-grid1 .each-product {
+    width: 170px;
+    height: 170px;
+  }
+  #products-grid #products-grid1 .each-product .cost-name {
+    top: 115px;
+    width: 48%;
+  }
+  #products-grid #products-grid1 .each-product .cost-name h3 {
+    font-size: 14px;
+  }
+  #products-grid #products-grid1 .each-product .cost-name p {
+    font-size: 15px;
+  }
+  #products-grid #products-grid1 .each-product .item-number {
+    top: 115px;
+    padding: 10.4px 1px;
+  }
+  #products-grid #products-grid1 .each-product .item-number p {
+    font-size: 15px;
+  }
+  #contact h3 {
+    font-size: 22px;
+  }
+  button {
+    padding: 7px 14px;
+    font-size: 14px;
+  }
+  #cart-page #go-back {
+    left: 75%;
+  }
+  #cart-page #cart-display-grid .cart-cols {
+    margin: 0 15px;
+  }
+  #cart-page #cart-display-grid .cart-cols h5 {
+    font-size: 17px;
+  }
+  #cart-page #cart-display-grid .cart-cols p {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=styles.css.map */

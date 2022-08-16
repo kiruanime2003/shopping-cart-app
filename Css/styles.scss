@@ -386,12 +386,14 @@ section{
     }
 }
 
+//900px min width
 @media screen and (min-width: 900px) {
     #menu {
         display: none;
     }
 }
 
+//950px max width
 @media screen and (max-width: 950px) {
     ul {
         position: fixed;
@@ -466,6 +468,7 @@ section{
                 .cost-name {
                     top: 149px;
                     width: 52%;
+                    left: -5px;
     
                     h3{
                         font-size: 15.5px;
@@ -478,6 +481,7 @@ section{
     
                 .item-number {
                     top: 149px;
+                    left: -5px;
                     padding: 12.6px 2px;
     
                     p{
@@ -530,6 +534,95 @@ section{
     
                 p{
                     font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+//680px max width
+@media screen and (max-width: 680px) {
+    
+    #home {
+
+        h1 {
+            font-size: 25px;
+        }
+    }
+    
+    #products-grid {
+    
+        #intro {
+            width: 80vw;
+            letter-spacing: 0.3px;
+        }
+    
+        #cart-btn{
+            width: 95vw;
+        }
+    
+        #products-grid1 {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            max-width: 550px;
+    
+            .each-product {
+                width: 170px;
+                height: 170px;
+    
+                .cost-name {
+                    top: 115px;
+                    width: 48%;
+    
+                    h3{
+                        font-size: 14px;
+                    }
+    
+                    p{
+                        font-size: 15px;
+                    }
+                }
+    
+                .item-number {
+                    top: 115px;
+                    padding: 10.4px 1px;
+    
+                    p{
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+    #contact{
+    
+        h3{
+            font-size: 22px;
+        }
+    }
+
+    button {
+        padding: 7px 14px;
+        font-size: 14px;
+    }
+
+    #cart-page{
+    
+        #go-back{
+            left: 75%;
+        }
+    
+        #cart-display-grid{
+            
+            .cart-cols{
+                margin: 0 15px;
+                
+                h5{
+                    font-size: 17px;
+                }
+    
+                p{
+                    font-size: 16px;
                 }
             }
         }

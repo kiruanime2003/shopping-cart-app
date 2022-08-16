@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     //index 2 fries
                     if (!(document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2])) {
                         pFries.itemProperty = document.createElement("p");
-                        pFries.itemProperty.innerHTML = "French fries";
+                        pFries.itemProperty.innerHTML = "Fries";
                         itemNameColumn.appendChild(pFries.itemProperty);
                         pFries.itemProperty.classList.add("first-col");
                         pFries.itemProperty.classList.add("fries-row");
@@ -334,7 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         pFries.costProperty.classList.add("fries-row");
                     }
                     else {
-                        document.getElementsByClassName("first-col")[2].innerHTML = "French fries";
+                        document.getElementsByClassName("first-col")[2].innerHTML = "Fries";
                         document.getElementsByClassName("second-col")[2].innerHTML = friesQuantity;
                         document.getElementsByClassName("third-col")[2].innerHTML = "$" + 40 * friesQuantity;
                     }
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (!(document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2])) {
 
                         pFries.itemProperty = document.createElement("p");
-                        pFries.itemProperty.innerHTML = "French fries";
+                        pFries.itemProperty.innerHTML = "Fries";
                         itemNameColumn.appendChild(pFries.itemProperty);
                         pFries.itemProperty.classList.add("first-col");
                         pFries.itemProperty.classList.add("fries-row");
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         pFries.costProperty.classList.add("fries-row");
                     }
                     else {
-                        document.getElementsByClassName("first-col")[1].innerHTML = "French fries";
+                        document.getElementsByClassName("first-col")[1].innerHTML = "Fries";
                         document.getElementsByClassName("second-col")[1].innerHTML = friesQuantity;
                         document.getElementsByClassName("third-col")[1].innerHTML = "$" + 40 * friesQuantity;
                     }
@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (!(document.getElementsByClassName("fries-row")[0] || document.getElementsByClassName("fries-row")[1] || document.getElementsByClassName("fries-row")[2])) {
 
                         pFries.itemProperty = document.createElement("p");
-                        pFries.itemProperty.innerHTML = "French fries";
+                        pFries.itemProperty.innerHTML = "Fries";
                         itemNameColumn.appendChild(pFries.itemProperty);
                         pFries.itemProperty.classList.add("first-col");
                         pFries.itemProperty.classList.add("fries-row");
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         pFries.costProperty.classList.add("fries-row");
                     }
                     else {
-                        document.getElementsByClassName("first-col")[0].innerHTML = "French fries";
+                        document.getElementsByClassName("first-col")[0].innerHTML = "Fries";
                         document.getElementsByClassName("second-col")[0].innerHTML = friesQuantity;
                         document.getElementsByClassName("third-col")[0].innerHTML = "$" + 40 * friesQuantity;
                     }
@@ -542,7 +542,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((doughnutQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0)  (pizzaQuantity == 0) || (burgerQuantity == 0) || (friesQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0)) {
+                else if ((doughnutQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (pizzaQuantity == 0) || (burgerQuantity == 0) || (friesQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0)) {
 
                     if (!(document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2])) {
 
