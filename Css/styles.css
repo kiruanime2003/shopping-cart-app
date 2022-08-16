@@ -343,16 +343,11 @@ section {
   font-size: 21px;
   letter-spacing: 0.3px;
   color: #363537;
-  font-weight: 500;
+  font-weight: 700;
 }
 #cart-page #cart-display-grid .cart-cols #item-name-col, #cart-page #cart-display-grid .cart-cols #quantity-col, #cart-page #cart-display-grid .cart-cols #cost-col {
   margin-top: 20px;
-  line-height: 1.5;
-}
-#cart-page p {
-  font-weight: 700;
-  font-size: 25px;
-  color: #363537;
+  line-height: 2;
 }
 
 @media screen and (min-width: 900px) {
@@ -446,5 +441,17 @@ section {
   button {
     padding: 8px 16px;
     font-size: 16px;
+  }
+  #cart-page #go-back {
+    left: 65%;
+  }
+  #cart-page #cart-display-grid .cart-cols {
+    margin: 0 20px;
+  }
+  #cart-page #cart-display-grid .cart-cols h5 {
+    font-size: 18px;
+  }
+  #cart-page #cart-display-grid .cart-cols p {
+    font-size: 17px;
   }
 }/*# sourceMappingURL=styles.css.map */
