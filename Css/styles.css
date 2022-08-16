@@ -157,13 +157,12 @@ section {
   max-width: 770px;
 }
 #products-grid #products-grid1 {
-  padding: 50px 10px;
+  padding: 50px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-column-gap: 10px;
   grid-row-gap: 35px;
   margin: auto;
-  max-width: 830px;
+  max-width: 770px;
 }
 #products-grid #products-grid1 #pizza {
   background-image: url(../Images/pizza.jpg);
@@ -305,6 +304,11 @@ section {
 #cart-page {
   width: 100%;
 }
+#cart-page #go-back {
+  position: relative;
+  top: 100px;
+  left: 57%;
+}
 #cart-page #cart-display-grid {
   display: flex;
   flex-direction: row;
@@ -313,9 +317,9 @@ section {
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
-  top: -50%;
+  top: 30px;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 30px);
   padding: 20px 0;
   border-radius: 15px;
 }
@@ -336,7 +340,7 @@ section {
 }
 #cart-page #cart-display-grid .cart-cols p {
   text-align: center;
-  font-size: 22px;
+  font-size: 21px;
   letter-spacing: 0.3px;
   color: #363537;
   font-weight: 500;
@@ -356,7 +360,7 @@ section {
     display: none;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   ul {
     position: fixed;
     left: -100%;
@@ -389,5 +393,58 @@ section {
   #menu.active .bar:nth-child(3) {
     transition: 0.15s ease-in;
     transform: translateY(-8px) rotate(-45deg);
+  }
+  #home h1 {
+    font-size: 29px;
+  }
+  #products-grid h2 {
+    font-size: 22px;
+  }
+  #products-grid #intro {
+    width: 60vw;
+    letter-spacing: 0.3px;
+  }
+  #products-grid #cart-btn {
+    width: 95vw;
+  }
+  #products-grid #products-grid1 {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    max-width: 660px;
+  }
+  #products-grid #products-grid1 .each-product {
+    width: 210px;
+    height: 210px;
+  }
+  #products-grid #products-grid1 .each-product .cost-name {
+    top: 149px;
+    width: 52%;
+  }
+  #products-grid #products-grid1 .each-product .cost-name h3 {
+    font-size: 15.5px;
+  }
+  #products-grid #products-grid1 .each-product .cost-name p {
+    font-size: 17px;
+  }
+  #products-grid #products-grid1 .each-product .item-number {
+    top: 149px;
+    padding: 12.6px 2px;
+  }
+  #products-grid #products-grid1 .each-product .item-number p {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  #contact h3 {
+    font-size: 28px;
+  }
+  #contact form input {
+    width: 40vw;
+    font-size: 15px;
+  }
+  #contact footer {
+    font-size: 15px;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
   }
 }/*# sourceMappingURL=styles.css.map */
