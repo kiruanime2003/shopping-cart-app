@@ -337,21 +337,29 @@ section{
 }
 
 #cart-page{
+    width: 100%;
 
     #cart-display-grid{
         display: flex;
         flex-direction: row;
-        width: 100%;
-        margin-top: 30px;
+        background-color: $cultured;
+        width: fit-content;
+        position: relative;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        padding: 20px 0;
+        border-radius: 15px;
         
         .cart-cols{
             display: flex;
             flex-direction: column;
-            margin: 0 10px;
+            margin: 0 30px;
+            width: fit-content;
             
             h5{
                 font-weight: 700;
-                font-size: 25px;
+                font-size: 23px;
                 color: $tartOrange;
                 text-align: center;
                 letter-spacing: 0.1px;
@@ -359,7 +367,7 @@ section{
 
             p{
                 text-align: center;
-                font-size: 21px;
+                font-size: 22px;
                 letter-spacing: 0.3px;
                 color: $jet;
                 font-weight: 500;
