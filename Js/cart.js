@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                else if ((doughnutQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0)  (pizzaQuantity == 0) || (burgerQuantity == 0) || (friesQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0)) {
+                else if ((doughnutQuantity > 0 && shawarmaQuantity > 0) || (doughnutQuantity > 0) || (shawarmaQuantity > 0) || (pizzaQuantity == 0) || (burgerQuantity == 0) || (friesQuantity == 0) || (doughnutQuantity == 0) || (shawarmaQuantity == 0)) {
 
                     if (document.getElementsByClassName("hotdogs-row")[0] || document.getElementsByClassName("hotdogs-row")[1] || document.getElementsByClassName("hotdogs-row")[2]) {
                         (document.getElementsByClassName("first-col")[0]).remove();
